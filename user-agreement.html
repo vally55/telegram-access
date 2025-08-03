@@ -38,24 +38,23 @@
       margin-top: 1.5rem;
       font-size: 1rem;
     }
-    a#confirm-link {
+    a#confirm-btn {
       display: inline-block;
       margin-top: 1.5rem;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: bold;
-      color: green;
+      background-color: #28a745;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
       text-decoration: none;
       opacity: 0.4;
       pointer-events: none;
       transition: opacity 0.3s ease;
     }
-    a#confirm-link.enabled {
+    a#confirm-btn.enabled {
       opacity: 1;
       pointer-events: auto;
-    }
-    a.direct-link {
-      color: #0057e7;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -104,9 +103,6 @@ By remaining in this group, you confirm that:
 - You understand the nature and risks of participating in a user-driven space  
 - You accept these terms as a condition of your membership  
 
-Direct group link: 
-<a href="https://t.me/+kc_lpX5nql40ZTIx" class="direct-link" target="_blank">https://t.me/+kc_lpX5nql40ZTIx</a>
-
 Let’s keep this group safe and respectful.
 
 — Admin: inevitable (@ToxicGas1916)
@@ -117,18 +113,18 @@ Let’s keep this group safe and respectful.
     I have read and agree to the User Agreement.
   </label>
 
-  <a href="https://t.me/+kc_lpX5nql40ZTIx" id="confirm-link" target="_blank" rel="noopener noreferrer">✅ Tap here to Confirm and Join Group</a>
+  <a href="https://t.me/+kc_lpX5nql40ZTIx" id="confirm-btn" target="_blank" rel="noopener noreferrer">Confirm</a>
 </div>
 
 <script>
   const checkbox = document.getElementById('agree-checkbox');
-  const confirmLink = document.getElementById('confirm-link');
+  const confirmBtn = document.getElementById('confirm-btn');
 
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-      confirmLink.classList.add('enabled');
+      confirmBtn.classList.add('enabled');
     } else {
-      confirmLink.classList.remove('enabled');
+      confirmBtn.classList.remove('enabled');
     }
   });
 </script>
