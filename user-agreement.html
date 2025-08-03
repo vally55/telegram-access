@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>User Agreement</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background: #f9f9f9;
+    color: #333;
+  }
+  h1 {
+    color: #0078d7;
+  }
+  .agreement-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+  button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #0078d7;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  button.enabled {
+    cursor: pointer;
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
 
+<div class="agreement-box">
+  <h1>User Agreement</h1>
+  <p>Please read the following rules and terms carefully before joining the Telegram group.</p>
+  <ul>
+    <li>Respect all members and admins.</li>
+    <li>No spam or advertising.</li>
+    <li>Follow the guidelines as enforced by the gatekeeper bot.</li>
+    <li>Contact @ToxicGas1916 if you encounter any problems.</li>
+    <!-- Add your full user agreement text here -->
+  </ul>
+
+  <label>
+    <input type="checkbox" id="agree-checkbox" />
+    I have read and agree to the User Agreement.
+  </label>
+
+  <!-- Confirm button links to Telegram group -->
+  <a href="https://t.me/+kc_lp" id="confirm-btn" role="button" target="_blank" rel="noopener noreferrer" aria-disabled="true" class="disabled-button">Confirm & Join Telegram Group</a>
+</div>
+
+<script>
+  const checkbox = document.getElementById('agree-checkbox');
+  const confirmBtn = document.getElementById('confirm-btn');
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      confirmBtn.classList.add('enabled');
+      confirmBtn.classList.remove('disabled-button');
+      confirmBtn.setAttribute('aria-disabled', 'false');
+      confirmBtn.style.pointerEvents = 'auto';
+    } else {
+      confirmBtn.classList.remove('enabled');
+      confirmBtn.classList.add('disabled-button');
+      confirmBtn.setAttribute('aria-disabled', 'true');
+      confirmBtn.style.pointerEvents = 'none';
+    }
+  });
+
+  // Initially disable the button
+  confirmBtn.style.pointerEvents = 'none';
+</script>
+
+<style>
+  .disabled-button {
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+  }
+</style>
+
+</body>
+</html>
