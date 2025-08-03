@@ -8,19 +8,20 @@
   body {
     font-family: Arial, sans-serif;
     margin: 2rem;
-    background: #f9f9f9;
+    background: #000000;
     color: #333;
   }
   h1 {
     color: #0078d7;
   }
   .agreement-box {
-    background: #fff;
+    background: #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
     max-width: 600px;
     margin: auto;
+    color: #333;
   }
   label {
     display: flex;
@@ -29,7 +30,7 @@
     margin-top: 1.5rem;
     font-size: 1rem;
   }
-  button {
+  a#confirm-btn {
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
@@ -37,15 +38,15 @@
     border: none;
     color: white;
     border-radius: 5px;
-    cursor: not-allowed;
     opacity: 0.5;
-    transition: opacity 0.3s ease;
+    pointer-events: none;
     text-decoration: none;
     display: inline-block;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
   }
-  button.enabled {
-    cursor: pointer;
+  a#confirm-btn.enabled {
     opacity: 1;
+    pointer-events: auto;
   }
 </style>
 </head>
@@ -59,7 +60,6 @@
     <li>No spam or advertising.</li>
     <li>Follow the guidelines as enforced by the gatekeeper bot.</li>
     <li>Contact @ToxicGas1916 if you encounter any problems.</li>
-    <!-- Add your full user agreement text here -->
   </ul>
 
   <label>
@@ -67,8 +67,7 @@
     I have read and agree to the User Agreement.
   </label>
 
-  <!-- Confirm button links to Telegram group -->
-  <a href="https://t.me/+kc_lp" id="confirm-btn" role="button" target="_blank" rel="noopener noreferrer" aria-disabled="true" class="disabled-button">Confirm & Join Telegram Group</a>
+  <a href="https://t.me/+kc_lpX5nql40ZTIx" id="confirm-btn" target="_blank" rel="noopener noreferrer">Confirm & Join Telegram Group</a>
 </div>
 
 <script>
@@ -78,27 +77,11 @@
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
       confirmBtn.classList.add('enabled');
-      confirmBtn.classList.remove('disabled-button');
-      confirmBtn.setAttribute('aria-disabled', 'false');
-      confirmBtn.style.pointerEvents = 'auto';
     } else {
       confirmBtn.classList.remove('enabled');
-      confirmBtn.classList.add('disabled-button');
-      confirmBtn.setAttribute('aria-disabled', 'true');
-      confirmBtn.style.pointerEvents = 'none';
     }
   });
-
-  // Initially disable the button
-  confirmBtn.style.pointerEvents = 'none';
 </script>
-
-<style>
-  .disabled-button {
-    cursor: not-allowed !important;
-    opacity: 0.5 !important;
-  }
-</style>
 
 </body>
 </html>
